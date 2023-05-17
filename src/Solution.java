@@ -1,21 +1,24 @@
 class Solution {
     public int pairSum(ListNode head) {
-        int len=0;
-        ListNode temphead=head;
-        while (temphead!=null)
-        {
-            len+=2;
-            temphead=temphead.next.next;
+        // Calculate the length of the linked list
+        int len = 0;
+        ListNode tempHead = head;
+        while (tempHead != null) {
+            len += 2;
+            tempHead = tempHead.next.next;
         }
-        int[]values=new int[len];
-        int counter=0;
-        temphead=head;
-        while (temphead!=null)
-        {
-            values[counter]=temphead.val;
+
+        // Create an array to store the values of the nodes
+        int[] values = new int[len];
+        int counter = 0;
+        tempHead = head;
+        while (tempHead != null) {
+            values[counter] = tempHead.val;
             counter++;
-            temphead=temphead.next;
+            tempHead = tempHead.next;
         }
+
+        // Find the maximum twin sum
         int max=0;
         int pointer1=0;
         int pointer2=len-1;
